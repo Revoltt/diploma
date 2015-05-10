@@ -7,11 +7,11 @@
 \caption{Результаты работы предложенного алгоритма на некоторых документах}
 \label{tabular:results}
 \begin{center}
-\begin{tabular}{|p{0.26\linewidth}|p{0.14\linewidth}|p{0.14\linewidth}|p{0.16\linewidth}|p{0.19\linewidth}|p{0.05\linewidth}|}
+\begin{tabular}{|p{0.26\linewidth}|p{0.14\linewidth}|p{0.14\linewidth}|p{0.16\linewidth}|p{0.15\linewidth}|p{0.04\linewidth}|}
 \hline
-\textbf{Название\newlineдокумента} & \textbf{Номер исходной версии} & \textbf{Номер\newlineконечной\newline версии} & \textbf{Примерный объем (тыс. символов)} & \textbf{Количество перенесенных фрагментов} & \textbf{\%} \\
+\textbf{Название\newlineдокумента} & \textbf{Номер\newline исходной версии} & \textbf{Номер\newlineконечной\newline версии} & \textbf{Примерный объем (тыс. символов)} & \textbf{Перенесено/\newlineнайдено\newline фрагментов} & \textbf{\%} \\
 \hline
-ETSI TS 103 097 & 1.1.12 & 1.1.14 & 77 & 315/338 &  93.2\\
+ETSI TS 103 097 & 1.1.6 & 1.1.12 & 75 & 191/430 &  44.4\\
 \hline
 TTCN-3 core language part 3 head 5 & 4.5.1 & 4.6.1 & 32 & 323/335 & 96.4\\
 \hline
@@ -31,13 +31,13 @@ LSB**, zlib-deflateinit2 & 3.1 & 4.0 & 3.5 & 139/147 & 94.6\\
 \hline
 LSB, zlib-deflate-1 & 3.1 & 4.0 & 5.2 & 186/200 & 93.0\\
 \hline
-LSB, libutil-getopt-3 & 3.1 & 4.0 & 5.5 & 232/232 & 100.0\\
+LSB, libutil-getopt-3 & 3.1 & 4.0 & 5.5 & 232/232 & 100\\
 \hline
 POSIX,\newlineвсе документы & Issue 6, 2004 & Issue 7, 2008 & $\sim$8000 & 27683/39341 & 70.4\\
 \hline
 LSB,\newlineвсе документы & 3.1 & 4.0 & $\sim$2000 & 5754/6767 & 85.0\\
 \hline
-Special test Document & 1 & 2 & 0.5 & 4/4 & 100.0 \\
+Test Document 1 & 1 & 2 & 0.5 & 4/4 & 100 \\
 \hline
 \end{tabular}
 \end{center}
@@ -52,35 +52,35 @@ Special test Document & 1 & 2 & 0.5 & 4/4 & 100.0 \\
 \caption{Результаты сравнения эффективности двух алгоритмов}
 \label{tabular:comparisson}
 \begin{center}
-\begin{tabular}{|p{0.26\linewidth}|p{0.16\linewidth}|p{0.07\linewidth}|p{0.07\linewidth}|p{0.07\linewidth}||p{0.07\linewidth}|p{0.07\linewidth}|p{0.07\linewidth}|}
+\begin{tabular}{|p{0.26\linewidth}|p{0.14\linewidth}|p{0.05\linewidth}|p{0.05\linewidth}|p{0.06\linewidth}|p{0.03\linewidth}||p{0.05\linewidth}|p{0.05\linewidth}|p{0.06\linewidth}|p{0.03\linewidth}|}
 \hline
-& & \multicolumn{3}{p{0.21\linewidth}||}{\textbf{Решение системы Requality}} & \multicolumn{3}{p{0.21\linewidth|}}{\textbf{Предложенное\newline решение}} \\
+& & \multicolumn{4}{p{0.19\linewidth}||}{\textbf{Решение в Requality}} & \multicolumn{4}{p{0.19\linewidth}|}{\textbf{Предложенное\newline решение}} \\
 \hline
-\textbf{Название\newlineдокумента} & \textbf{Примерный объем (т. с.)} & \rotatebox{90}{Найдено } & \rotatebox{90}{Перенесено } & \rotatebox{90}{Время (мс) } & \rotatebox{90}{Найдено } & \rotatebox{90}{Перенесено } & \rotatebox{90}{Время (мс) }\\
+\textbf{Название\newlineдокумента} & \textbf{Примерный объем (т. с.)} & \rotatebox{90}{Найдено } & \rotatebox{90}{Перенесено } & \rotatebox{90}{Время (мс) } & \% & \rotatebox{90}{Найдено } & \rotatebox{90}{Перенесено } & \rotatebox{90}{Время (мс) } & \% \\
 \hline
-TTCN-3 core language part 3 head 5 & 32 & & & & 335 & 323 & 4439\\
+TTCN-3 core language part 3 head 5 & 32 & 335 & 231 & 3212 & 69 & 335 & 323 & 4439 & 96\\
 \hline
-TTCN-3 core language part 4 head 6 & 104 & & & & 969 & 936 & 10627\\
+TTCN-3 core language part 4 head 6 & 104 & 969 & 649 & 7993 & 67 & 969 & 936 & 10627 & 97\\
 \hline
-TTCN-3 core language part 5 head 7 & 20 & & & & 138 & 154 & 2641\\
+TTCN-3 core language part 5 head 7 & 20 & 154 & 96 & 3239 & 62 & 154 & 138 & 2641 & 90\\
 \hline
-ETSI TS 103 097 & 77 & & & & 338 & 315 & 2799\\
+ETSI TS 103 097 & 75 & 430 & 160 & 3194 & 37 & 430 & 191 & 2757 & 44\\
 \hline
-POSIX*, fprintf & 32 & & & & 1014 & 721 & 5059\\
+POSIX*, fprintf & 32 & 1014 & 500 & 1520 & 49 & 1014 & 721 & 5059 & 71\\
 \hline
-POSIX, fwprintf & 23 & & & & 954 & 651 & 4633\\
+POSIX, fwprintf & 23 & 954 & 473 & 1499 & 50 & 954 & 651 & 4633 & 68\\
 \hline
-POSIX, environ(exec) & 33 & & & & 487 & 335 & 4934\\
+POSIX, environ(exec) & 33 & 487 & 245 & 1811 & 50 & 487 & 335 & 4934 & 69\\
 \hline
-POSIX, fscanf & 20 & & & & 610 & 414 & 2281\\
+POSIX, fscanf & 20 & 610 & 296 & 1640 & 49 & 610 & 414 & 2281 & 68\\
 \hline
-LSB**, zlib-deflateinit2 & 3.5 & & & & 147 & 139 & 1390\\
+LSB**, zlib-deflateinit2 & 3.5 & 147 & 104 & 1079 & 71 & 147 & 139 & 1390 & 95\\
 \hline
-LSB, zlib-deflate-1 & 5.2 & & & & 200 & 186 & 1235\\
+LSB, zlib-deflate-1 & 5.2 & 200 & 134 & 1250 & 67 & 200 & 186 & 1235 & 93\\
 \hline
-LSB, libutil-getopt-3 & 5.5 & & & & 232 & 232 & 1250\\
+LSB, libutil-getopt-3 & 5.5 & 232 & 127 & 1064 & 55 & 232 & 232 & 1250 & 100\\
 \hline
-Special test Document & 0.5 & --- & --- & --- & 4 & 4 & 200 \\
+Test Document 1 & 0.5 & 4 & 0 & 1111 & 0 & 4 & 4 & 200 & 100\\
 \hline
 \end{tabular}
 \end{center}
@@ -89,6 +89,8 @@ Special test Document & 0.5 & --- & --- & --- & 4 & 4 & 200 \\
 \emph{** Linux Standard Base Core Specification}
 \end{table}
 
-Документ, указанный в таблицах \ref{tabular:results} и \ref{tabular:comparisson}, как \emph{"Special test Document"} версий 1 и 2, является небольшим тестовым документом, демонстрирующим основное преимущество разработанного алгоритма перед алгоритмом, испольующим Diff --- в конечной версии этого документа некоторые разделы переставлены местами по сравнению с исходной.
+Документ, указанный в таблицах \ref{tabular:results} и \ref{tabular:comparisson}, как \emph{"Test Document 1"} версий 1 и 2, является небольшим тестовым документом, демонстрирующим основное преимущество разработанного алгоритма перед алгоритмом, испольующим Diff --- в конечной версии этого документа некоторые разделы переставлены местами по сравнению с исходной.
 
-Из таблиц \ref{tabular:results} и \ref{tabular:comparisson} видно, что в целом реализация приведенного в данной работе алгоритма переносит больше фрагментов требований, однако работает дольше. Однако это связано преимущественно не с изменениями положения разделов в конечном документе, а с недостатками реализации алгоритма, основанного на использовании diff.
+Из таблиц \ref{tabular:results} и \ref{tabular:comparisson} видно, что в целом реализация приведенного в данной работе алгоритма переносит больше фрагментов требований, однако работает дольше. Но это связано преимущественно не с изменениями положения разделов в конечном документе и различиями рассмотренных алгоритмов, а с недостатками текущей реализации алгоритма, основанного на использовании Diff. В среднем алгоритм переносит на $\sim$ 41\% больше фрагментов и работает на $\sim$ 44\% медленнее.
+
+Код программы, реализующей предложенный алгоритм, занимает $\sim$1300 строк, и приводить его в тексте данной работы было бы нецелесообразно. Посмотреть его можно в публичном репозитории GitHub \cite{web:github}. 

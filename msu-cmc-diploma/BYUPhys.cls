@@ -389,10 +389,10 @@
 	    \normalsize
 	    \vfill
 	    \begin{flushright}
-	    \emph{\@AuthorText:\\}
+	    \textbf{\@AuthorText:\\}
 	    {\small \@GrText~\@AcadGroup\\}
 	    {\large \@Author \\[\baselineskip]}
-	    \emph{\@AdvisorText:\\}
+	    \textbf{\@AdvisorText:\\}
 	    {\large ~ \@AdvisorDegree~ \@Advisor\\}
 	    \end{flushright}
 	    \vfill
