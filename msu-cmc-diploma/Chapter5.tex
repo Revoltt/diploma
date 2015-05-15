@@ -1,7 +1,7 @@
 \section{Полученные результаты}
 \label{sec:Chapter5} \index{Chapter5}
 
-Описанный ранее алгоритм был реализован на языке программирования Java, и работа реализации была проверена на наборе документов ETSI (\cite{web:etsi461}), IEEE (\cite{web:POSIX2004}, \cite{web:POSIX2008}) и Linux Foundation (\cite{web:LSB3}, \cite{web:LSB4}). Результаты экспериментов приведены в таблице \ref{tabular:results}.
+Описанный ранее алгоритм был реализован на языке программирования Java, и работа реализации была проверена на наборе документов ETSI \cite{web:etsi461}, IEEE \cite{web:POSIX2004}, \cite{web:POSIX2008} и Linux Foundation \cite{web:LSB3}, \cite{web:LSB4}. Результаты экспериментов приведены в таблице \ref{tabular:results}.
 
 \begin{table}[H]
 \caption{Результаты работы предложенного алгоритма на некоторых документах}
@@ -39,6 +39,8 @@ LSB,\newlineвсе документы & 3.1 & 4.0 & $\sim$2000 & 5754/6767 & 85.
 \hline
 Test Document 1 & 1 & 2 & 0.5 & 4/4 & 100 \\
 \hline
+TTCN-3 core language part 3 head 5 (changed) & 4.5.1 & 4.6.1 & 32 & 323/335 & 96.4\\
+\hline
 \end{tabular}
 \end{center}
 \emph{* The Open Group Base Specifications IEEE Std 1003.1}
@@ -54,7 +56,7 @@ Test Document 1 & 1 & 2 & 0.5 & 4/4 & 100 \\
 \begin{center}
 \begin{tabular}{|p{0.26\linewidth}|p{0.14\linewidth}|p{0.05\linewidth}|p{0.05\linewidth}|p{0.06\linewidth}|p{0.03\linewidth}||p{0.05\linewidth}|p{0.05\linewidth}|p{0.06\linewidth}|p{0.03\linewidth}|}
 \hline
-& & \multicolumn{4}{p{0.19\linewidth}||}{\textbf{Решение в Requality}} & \multicolumn{4}{p{0.19\linewidth}|}{\textbf{Предложенное\newline решение}} \\
+& & \multicolumn{4}{p{0.19\linewidth}||}{\textbf{Решение в Requality***}} & \multicolumn{4}{p{0.19\linewidth}|}{\textbf{Предложенное\newline решение}} \\
 \hline
 \textbf{Название\newlineдокумента} & \textbf{Примерный объем (т.с.)} & \rotatebox{90}{Найдено } & \rotatebox{90}{Перенесено } & \rotatebox{90}{Время (мс) } & \% & \rotatebox{90}{Найдено } & \rotatebox{90}{Перенесено } & \rotatebox{90}{Время (мс) } & \% \\
 \hline
@@ -82,15 +84,21 @@ LSB, libutil-getopt-3 & 5.5 & 232 & 127 & 1064 & 55 & 232 & 232 & 1250 & 100\\
 \hline
 Test Document 1 & 0.5 & 4 & 0 & 1111 & 0 & 4 & 4 & 200 & 100\\
 \hline
+TTCN-3 core language part 3 head 5 (changed) & 32 & 335 & 177 & 3569 & 69 & 335 & 323 & 4422 & 96\\
+\hline
 \end{tabular}
 \end{center}
 \emph{* The Open Group Base Specifications IEEE Std 1003.1}
 
 \emph{** Linux Standard Base Core Specification}
+
+\emph{*** При тестировании была использована версия Requality, актуальная на момент 7.05.2015}
 \end{table}
 
 Документ, указанный в таблицах \ref{tabular:results} и \ref{tabular:comparisson}, как \emph{"Test Document 1"} версий 1 и 2, является небольшим тестовым документом, демонстрирующим основное преимущество разработанного алгоритма перед алгоритмом, испольующим Diff --- в конечной версии этого документа некоторые разделы переставлены местами по сравнению с исходной.
 
-Из таблиц \ref{tabular:results} и \ref{tabular:comparisson} видно, что в целом реализация приведенного в данной работе алгоритма переносит больше фрагментов требований, однако работает дольше. Но это связано преимущественно не с изменениями положения разделов в конечном документе и различиями рассмотренных алгоритмов, а с недостатками текущей реализации алгоритма, основанного на использовании Diff. В среднем алгоритм переносит на $\sim$ 41\% больше фрагментов и работает на $\sim$ 44\% медленнее.
+Конечная версия документа, указанного в таблицах \ref{tabular:results} и \ref{tabular:comparisson}, как \emph{TTCN-3 core language part 3 head 5 (changed)}, получена из соответствующей конечной версии документа \emph{TTCN-3 core language part 3 head 5} перестановкой некоторых абзацев и разделов.
+
+Из таблиц \ref{tabular:results} и \ref{tabular:comparisson} видно, что в целом реализация приведенного в данной работе алгоритма переносит больше фрагментов требований, однако работает дольше. Но это связано преимущественно не с изменениями положения разделов в конечном документе и различиями рассмотренных алгоритмов, а с недостатками текущей реализации алгоритма, основанного на использовании Diff. В среднем алгоритм переносит на $\sim$ 41\% больше фрагментов и работает на $\sim$ 67\% медленнее.
 
 Код программы, реализующей предложенный алгоритм, занимает $\sim$1300 строк, и приводить его в тексте данной работы было бы нецелесообразно. Посмотреть его можно в публичном репозитории GitHub \cite{web:github}. 
